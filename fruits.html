@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyümölcsök</title>
+</head>
+<body>
+    <div class="container">
+        <div id="cim">
+            <h1>
+                Déli-Gyümölcsök
+            </h1>
+        </div>
+        <div>
+            <h2>
+                Neked melyik gyümölcs tetszik?
+            </h2>
+        </div>
+        <div>
+            <select id="fruits" onchange="handleChange(this)">
+                <option value="0">Válassz egy gyümölsöt...</option>
+                
+            </select>
+        </div>
+        <div id="megjelenes">
+
+        </div>
+        <script src="fruits.js"></script>
+        <script>
+            function handleChange(domObj) {
+                let userSelected = domObj.value
+                console.log(userSelected);
+                gyumik.forEach(obj => {
+                    document.getElementById('megjelenes').innerHTML += `${obj.image}${obj.descr}`    
+                })
+            }
+            
+            gyumik.forEach(obj => {
+                document.getElementById('fruits').innerHTML += `<option value=${obj.id}>${obj.name}</option>`
+            });
+
+
+        </script>
+    </div>
+</body>
+</html>
