@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gyümölcsök</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        
+    </style>
 </head>
 <body>
     <div class="container">
@@ -32,7 +39,9 @@
                 let userSelected = domObj.value
                 console.log(userSelected);
                 gyumik.forEach(obj => {
-                    document.getElementById('megjelenes').innerHTML += `${obj.image}${obj.descr}`    
+                    document.getElementById('megjelenes').innerHTML = `<img src=${obj.image} alt="">
+                    <h3>${obj.name}</h3>
+                    <p>${obj.descr}</p>`    
                 })
             }
             
